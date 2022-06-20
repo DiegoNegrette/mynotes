@@ -1,9 +1,23 @@
-import React, { useState } from "react";
-// import notes from "../assets/data";
+import React, { useEffect, useState } from "react";
+import axiosInstance from "../constants";
 import ListItem from "../components/ListItem";
+import AddButton from "../components/AddButton";
 
 const NotesListPage = () => {
 	let [notes, setNotes] = useState([]);
+
+	useEffect(() => {
+		const getNotes = async () => {
+			try {
+				const response = await axiosInstance.get("notes");
+				setNotes(response.data);
+				// console.log("Get in NoteList page");
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		getNotes();
+	}, []);
 
 	return (
 		<div className="notes">
@@ -16,6 +30,7 @@ const NotesListPage = () => {
 					<ListItem key={index} note={note} />
 				))}
 			</div>
+			<AddButton />
 		</div>
 	);
 };
