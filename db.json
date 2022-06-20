@@ -3,7 +3,7 @@
     {
       "id": 1,
       "body": "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
-      "updated": "2022-06-19T20:02:03.746Z",
+      "updated": "2022-06-20T06:55:09.115Z",
       "created": "2021-07-13T21:54:16.235392Z"
     },
     {
@@ -14,9 +14,15 @@
     },
     {
       "id": 3,
-      "body": "Wash car prueba ",
-      "updated": "2022-06-20T03:00:01.938Z",
+      "body": "Wash car prueba nueva\n\nOtra vez otra vez",
+      "updated": "2022-06-20T06:56:30.375Z",
       "created": "2021-07-13T00:16:22.399841Z"
+    },
+    {
+      "body": "Nueva nota\n\nNuevo resumen",
+      "created": "2022-06-20T06:02:13.311Z",
+      "updated": "2022-06-20T06:56:44.215Z",
+      "id": 4
     }
   ]
 }

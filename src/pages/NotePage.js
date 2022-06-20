@@ -51,7 +51,7 @@ const NotePage = () => {
 		e.preventDefault();
 		if (noteId !== "new" && !note.body) {
 			await deleteNote();
-		} else if (noteId === "new") {
+		} else if (noteId !== "new") {
 			await updateNote();
 		} else if (noteId === "new" && note !== null) {
 			await createNote();
@@ -83,8 +83,11 @@ const NotePage = () => {
 					</Link>
 				</h3>
 				<div style={{ display: "flex", gap: "1rem" }}>
-					{/* <button onClick={updateNote}>Save</button> */}
-					<button onClick={deleteNote}>Delete</button>
+					{noteId !== "new" ? (
+						<button onClick={deleteNote}>Delete</button>
+					) : (
+						<button onClick={handleSubmit}>Done</button>
+					)}
 				</div>
 			</div>
 			<textarea
