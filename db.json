@@ -3,25 +3,25 @@
     {
       "id": 1,
       "body": "Todays Agenda\n\n- Walk Dog\n- Feed fish\n- Play basketball\n- Eat a salad",
-      "updated": "2022-06-20T06:55:09.115Z",
+      "updated": "2022-06-20T07:02:57.696Z",
       "created": "2021-07-13T21:54:16.235392Z"
     },
     {
       "id": 2,
       "body": "Bob from bar down the \n\n- Take out trash\n- Eat food\n",
-      "updated": "2022-06-17T15:48:28.473Z",
+      "updated": "2022-06-20T07:02:59.840Z",
       "created": "2021-07-13T00:17:13.289897Z"
     },
     {
       "id": 3,
-      "body": "Wash car prueba nueva\n\nOtra vez otra vez",
-      "updated": "2022-06-20T06:56:30.375Z",
+      "body": "Wash car prueba nueva\n\nOtra vez",
+      "updated": "2022-06-21T02:09:50.990Z",
       "created": "2021-07-13T00:16:22.399841Z"
     },
     {
-      "body": "Nueva nota\n\nNuevo resumen",
+      "body": "Nueva nota\n\nNuevo cambio",
       "created": "2022-06-20T06:02:13.311Z",
-      "updated": "2022-06-20T06:56:44.215Z",
+      "updated": "2022-06-20T07:02:30.063Z",
       "id": 4
     }
   ]

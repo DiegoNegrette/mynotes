@@ -3,7 +3,7 @@ import axios from "axios";
 // Next we make an 'instance' of it
 const axiosInstance = axios.create({
 	// .. where we make our configurations
-	baseURL: "http://localhost:8000/",
+	baseURL: "http://127.0.0.1:8000/",
 });
 
 // Where you would set stuff like your 'Authorization' header, etc ...
