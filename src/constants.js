@@ -1,9 +1,9 @@
 // First we need to import axios.js
 import axios from "axios";
 // Next we make an 'instance' of it
-const axiosInstance = axios.create({
+const api = axios.create({
 	// .. where we make our configurations
-	baseURL: "http://127.0.0.1:8000/",
+	baseURL: "http://127.0.0.1:8000/api/",
 });
 
 // Where you would set stuff like your 'Authorization' header, etc ...
@@ -35,4 +35,4 @@ const axiosInstance = axios.create({
 // 	}
 // );
 
-export default axiosInstance;
+export default api;

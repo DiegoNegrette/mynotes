@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axiosInstance from "../constants";
+import api from "../constants";
 import ListItem from "../components/ListItem";
 import AddButton from "../components/AddButton";
 
@@ -9,7 +9,7 @@ const NotesListPage = () => {
 	useEffect(() => {
 		const getNotes = async () => {
 			try {
-				const response = await axiosInstance.get("notes");
+				const response = await api.get("notes/");
 				setNotes(response.data);
 				// console.log("Get in NoteList page");
 			} catch (error) {

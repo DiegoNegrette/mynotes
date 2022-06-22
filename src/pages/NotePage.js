@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowLeft } from "../assets/chevron-left.svg";
-import axiosInstance from "../constants";
+import api from "../constants";
 
 const NotePage = () => {
 	let navigate = useNavigate();
@@ -14,7 +14,7 @@ const NotePage = () => {
 		const getNote = async () => {
 			if (noteId === "new") return;
 			try {
-				const response = await axiosInstance.get(`notes/${noteId}`);
+				const response = await api.get(`notes/${noteId}`);
 				setNote(response.data);
 			} catch (error) {
 				console.log(error);
@@ -25,7 +25,7 @@ const NotePage = () => {
 
 	const createNote = async () => {
 		try {
-			const response = await axiosInstance.post(`notes/`, {
+			await api.post(`notes/create/`, {
 				...note,
 				"created": new Date(),
 				"updated": new Date(),
@@ -37,11 +37,11 @@ const NotePage = () => {
 
 	const updateNote = async () => {
 		try {
-			const response = await axiosInstance.patch(`notes/${noteId}`, {
+			const response = await api.patch(`notes/${noteId}/update/`, {
 				...note,
 				"updated": new Date(),
 			});
-			// console.log(`Put in Note page: ${response.statusText}`);
+			console.log(`Put in Note page: ${response.statusText}`);
 		} catch (error) {
 			console.log(error);
 		}
@@ -49,11 +49,11 @@ const NotePage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (noteId !== "new" && !note.body) {
+		if (noteId !== "new" && note.body === "") {
 			await deleteNote();
 		} else if (noteId !== "new") {
 			await updateNote();
-		} else if (noteId === "new" && note !== null) {
+		} else if (noteId === "new" && note.body !== null) {
 			await createNote();
 		}
 		// await new Promise((resolve, reject) => {
@@ -63,15 +63,19 @@ const NotePage = () => {
 		navigate("/");
 	};
 
-	const deleteNote = async (e) => {
-		e.preventDefault();
+	const deleteNote = async () => {
 		try {
-			await axiosInstance.delete(`notes/${noteId}`);
+			await api.delete(`notes/${noteId}/delete/`);
 			console.log("Delete en Note page");
 			navigate("/");
 		} catch (error) {
 			console.log(error);
 		}
+	};
+
+	const handleDeleteNote = async (e) => {
+		e.preventDefault();
+		await deleteNote();
 	};
 
 	return (
@@ -84,7 +88,7 @@ const NotePage = () => {
 				</h3>
 				<div style={{ display: "flex", gap: "1rem" }}>
 					{noteId !== "new" ? (
-						<button onClick={deleteNote}>Delete</button>
+						<button onClick={handleDeleteNote}>Delete</button>
 					) : (
 						<button onClick={handleSubmit}>Done</button>
 					)}

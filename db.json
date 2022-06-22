@@ -23,6 +23,12 @@
       "created": "2022-06-20T06:02:13.311Z",
       "updated": "2022-06-20T07:02:30.063Z",
       "id": 4
+    },
+    {
+      "body": "Nueva nota\n\nnueva edicion",
+      "created": "2022-06-21T03:07:19.561Z",
+      "updated": "2022-06-21T03:07:33.920Z",
+      "id": 5
     }
   ]
 }
